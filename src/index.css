@@ -1,0 +1,137 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --primary: 210 29% 24%;
+    --secondary: 204 70% 53%;
+    --accent: 6 78% 57%;
+    --light: 192 15% 94%;
+    --dark: 210 29% 24%;
+    --text: 0 0% 20%;
+    --text-light: 184 9% 62%;
+    --success: 145 63% 49%;
+    --warning: 37 90% 51%;
+    
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary-foreground: 210 40% 98%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+    --radius: 0.5rem;
+  }
+ 
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-gray-200;
+  }
+  body {
+    @apply bg-white text-gray-900 font-sans;
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+  h1, h2, h3 {
+    font-family: 'Roboto', sans-serif;
+    @apply font-bold mb-4 leading-tight;
+  }
+  h1 { 
+    @apply text-4xl md:text-5xl lg:text-6xl;
+  }
+  h2 { 
+    @apply text-3xl md:text-4xl lg:text-5xl;
+  }
+  h3 { 
+    @apply text-xl md:text-2xl lg:text-3xl;
+  }
+  p {
+    @apply text-base md:text-lg mb-6;
+  }
+}
+
+@layer components {
+  .container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .btn {
+    @apply inline-block px-6 py-3 rounded font-semibold transition-all duration-300 cursor-pointer;
+  }
+  
+  .btn.primary {
+    @apply bg-secondary text-white hover:bg-secondary/80 hover:-translate-y-1;
+  }
+  
+  .btn.secondary {
+    @apply bg-transparent border-2 border-white text-white hover:bg-white/10 hover:-translate-y-1;
+  }
+  
+  .section-title {
+    @apply text-center mb-12;
+  }
+  
+  .skill-bar {
+    @apply h-2 bg-gray-200 rounded overflow-hidden relative mt-2;
+  }
+  
+  .skill-bar-progress {
+    @apply absolute left-0 top-0 h-full bg-secondary transition-all duration-1000 ease-in-out;
+  }
+  
+  .about-card {
+    @apply bg-white p-8 rounded-lg shadow-md transition-all duration-300 cursor-pointer hover:-translate-y-1 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-secondary;
+  }
+  
+  .timeline-item {
+    @apply relative pl-12 mb-12;
+  }
+  
+  .timeline-item::before {
+    content: '';
+    @apply absolute left-0 top-0 w-0.5 h-full bg-secondary;
+  }
+  
+  .timeline-date {
+    @apply absolute -left-24 top-0 bg-secondary text-white py-2 px-4 rounded-full font-bold;
+  }
+  
+  .contact-form input,
+  .contact-form textarea {
+    @apply w-full p-3 border border-gray-300 rounded mb-4 transition-all duration-300 focus:border-secondary focus:outline-none focus:ring-2 focus:ring-secondary/30;
+  }
+}
